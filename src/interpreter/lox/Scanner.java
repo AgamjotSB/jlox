@@ -1,4 +1,4 @@
-package interpreter;
+package interpreter.lox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 // bad practice, should use TokenType.token
-import static interpreter.TokenType.*;
+import static interpreter.lox.TokenType.*;
 
 class Scanner {
     private final String source;
@@ -86,7 +86,7 @@ class Scanner {
 
             case '"': string(); break;
 
-            default: // hadError gets set so the code doesnt execute
+            default: // hadError gets set so the code doesn't execute
                      // even though all errors are scanned and reported
                 if (isDigit(c)) {
                     number();
