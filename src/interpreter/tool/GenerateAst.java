@@ -18,6 +18,11 @@ public class GenerateAst {
                 "Literal : Object value",
                 "Unary : Token operator, Expr right"
         ));
+
+        defineAst(outputDir, "Stmt", Arrays.asList(
+                "Expression : Expr expression",
+                "Print : Expr expression"
+        ));
     }
 
     private static void defineAst(
@@ -26,7 +31,7 @@ public class GenerateAst {
         String path = outputDir + "/" + baseName + ".java";
         PrintWriter writer = new PrintWriter(path, "UTF-8");
 
-        writer.println("package com.interpreter.lox;");
+        writer.println("package interpreter.lox;");
         writer.println();
         writer.println("import java.util.List;");
         writer.println();
